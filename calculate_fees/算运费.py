@@ -24,7 +24,14 @@ class delievery_fee:
             xpd_air_nor = 94+math.floor(n-2)*27
             xpd_air_sen = 116+math.floor(n-2)*30
         
-        print('包裹总重：%s kg, 税费：%0.2f \nPGP普通包裹：%0.2f \nPGP敏感包裹：%0.2f \n小坡岛海运大包：%0.2f \n小坡岛海运小包：%0.2f \n小坡岛空运普通：%0.2f \n小坡岛空运敏感：%0.2f' %(n, value*0.07, pgp_nor, pgp_sen, xpd_sea_large, xpd_sea_small, xpd_air_nor, xpd_air_sen))
+        name_dict = {'PGP普通': pgp_nor, 'PGP敏感': pgp_sen, '小坡岛海运大包': xpd_sea_large, '小坡岛海运小包': xpd_sea_small, '小坡岛空运普通': xpd_air_nor, '小坡岛空运敏感': xpd_air_sen}
+
+        delievery_methods = list(name_dict.keys())
+        delievery_fees = list(name_dict.values())
+        min_fees = min(delievery_fees)
+        min_method = delievery_methods[delievery_fees.index(min_fees)]
+
+        print('包裹总重：%s kg, 税费：%0.2f \nPGP普通包裹：%0.2f \nPGP敏感包裹：%0.2f \n小坡岛海运大包：%0.2f \n小坡岛海运小包：%0.2f \n小坡岛空运普通：%0.2f \n小坡岛空运敏感：%0.2f \n最便宜的是：%s' %(n, value*0.07, pgp_nor, pgp_sen, xpd_sea_large, xpd_sea_small, xpd_air_nor, xpd_air_sen, min_method))
 
         #return pgp_nor, pgp_sen, xpd_sea_large, xpd_sea_small, xpd_air_nor,xpd_air_sen
 
