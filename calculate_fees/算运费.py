@@ -29,7 +29,7 @@ class delievery_fee:
         #return pgp_nor, pgp_sen, xpd_sea_large, xpd_sea_small, xpd_air_nor,xpd_air_sen
 
         
-n = float(input("The overall weight (kg):"))
+#n = float(input("The overall weight (kg):"))
 value = float(input("How much are the packages (rmb):"))
 
 fee = delievery_fee()
